@@ -1,0 +1,19 @@
+--- !html
+ 
+version: 1
+ 
+required:
+        header: !content '//h1[@class="item-title"]//text()'
+        
+optional:
+        price:   !content '//div[@class="vip-header-and-details"]//div[@class="price"]//text()'
+        section: !content '//div[has_class("breadcrumbs")]/span/a/span/text()'
+        geo: !content '//div[@class="vip-header-and-details"]//div[@class="location"]//text()'
+
+        room_count: !content '//div[@class="vip-header-and-details"]//div[@class="attribute"]/span[contains(text(), "Dormitorio")]/text()'
+
+        text: !content '//div[@class="vip-header-and-details"]//div[@class="description"]//text()'
+
+        images:   !uris 
+                     selector: '//div[@class="thumbs"]//img/@src'
+                     callback: !lambda 'value, request: [v.replace("http://img.classistatic.com/crop/50x50/", "http://") for v in value]'
