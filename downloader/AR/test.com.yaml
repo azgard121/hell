@@ -1,6 +1,6 @@
 --- !html
  
-version: 1
+version: 2
  
 required:
         header: !content '//h1[@class="item-title"]//text()'
