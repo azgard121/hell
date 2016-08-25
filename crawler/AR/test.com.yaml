@@ -1,6 +1,6 @@
 --- !config
  
-version: 2
+version: 3
  
 roots:
   - 'http://www.alamaula.com/s-inmuebles-en-venta/v1c30p1'
