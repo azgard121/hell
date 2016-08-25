@@ -1,0 +1,16 @@
+--- !config
+ 
+version: 1
+ 
+roots:
+  - 'http://www.alamaula.com/s-inmuebles-en-venta/v1c30p1'
+
+main_page: !xpath '//div[@class="view"]//div[@class="title"]/a/@href'
+
+next: !xpath
+            selector: '//div[@class="pagination"]//a/@href'
+            filters: !pagination
+                    pattern: "page-"
+                    values: [1,700]
+sleep_time_min: 60
+sleep_time_max: 86400
