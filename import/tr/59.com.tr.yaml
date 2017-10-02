@@ -1,6 +1,8 @@
 --- !config
+
 urls:
     - 'https://esalle.ru/xml/ya_estate.xml'
+    
 plugin: !yandexxml
 
 schedule: !crontab
