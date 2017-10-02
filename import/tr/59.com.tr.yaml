@@ -1,0 +1,8 @@
+--- !config
+urls:
+    - 'https://esalle.ru/xml/ya_estate.xml'
+plugin: !yandexxml
+
+schedule: !crontab
+    hour: 6
+    minute: 0
