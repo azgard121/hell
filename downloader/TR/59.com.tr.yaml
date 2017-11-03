@@ -1,1 +1,25 @@
-test downloader updating new
+--- !html
+
+version: 2
+
+required:
+    header: !content '//h1/text()'
+
+optional:
+
+    contract_type: !content '//dt[text()="Durum"]/following-sibling::dd[1]/text()'
+    realty_type: !content '//dt[contains(text(), "Emlak Türü")]/following-sibling::dd[1]/text()'
+    geo: !content '//dt[contains(text(), "Konum")]/following-sibling::dd[1]/text()'
+    price: !content '//span[@class="tag price large-price"]/text()'
+    images: !uris '//section[@id="property-gallery"]//img/@src'
+    
+    floor: !content '//dt[contains(text(), "Kat Sayısı")]/following-sibling::dd[1]/text()'
+    floor_count: !content '//dt[contains(text(), "Dairenin Katı")]/following-sibling::dd[1]/text()'
+
+    area_total: !content '//dt[contains(text(), "Metrekare")]/following-sibling::dd[1]/text()' 
+    room_count: !content '//dt[contains(text(), "Oda")]/following-sibling::dd[1]/text()'
+    
+    text: !content '//h2[contains(text(), "Açıklama")]/../following-sibling::p/text()'
+    
+denied:
+    not_found: !content '//h2[contains(text(), "Üzgünüz. Aradığınız ilanı bulamadık.")]'
